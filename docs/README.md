@@ -42,6 +42,7 @@
 - 당첨 결과 계산
   - [ ] 당첨 번호 개수 계산 - LottoResultCalculator#countMatchedNumbers()
   - [ ] 보너스 번호 여부 확인 - LottoResultCalculator#isMatchedBonusNumber()
-  - [ ] 당첨 번호가 5개일 때 보너스 번호 일치 여부 확인 - LottoResultCalculator#
-  - [ ] 총 수익률 계산 - LottoResultCalculator#
-  - [ ] 총 수익률 출력 - LottoResultCalculator#
+  - [ ] 당첨 번호가 5개일 때 보너스 번호 일치 여부 확인 - LottoController#
+  - [ ] 당첨률 결과 통계를 위한 데이터 정리 작업 - Lotto#
+  - [ ] 총 수익률 계산 - LottoResultCalculator#getRateOfReturn()
+  - [ ] 총 수익률 출력 - LottoOutputView#
