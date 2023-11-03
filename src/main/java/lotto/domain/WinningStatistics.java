@@ -24,5 +24,5 @@ public enum WinningStatistics {
         return winningPrize;
     }
 
-    
+
 }
