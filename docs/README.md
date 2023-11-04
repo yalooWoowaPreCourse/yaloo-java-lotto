@@ -46,3 +46,6 @@
   - [ ] 당첨률 결과 통계를 위한 데이터 정리 작업 - Lotto#
   - [ ] 총 수익률 계산 - LottoResultCalculator#getRateOfReturn()
   - [ ] 총 수익률 출력 - LottoOutputView#
+
+## 🔨테스트
+### [기능별 테스트]
