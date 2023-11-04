@@ -55,7 +55,7 @@ public class LottoResultCalculator {
     public long getRateOfReturn(int purchasePrice,
                                 Map<WinningStatistics, Integer> totalStatistics){
         for (Map.Entry<WinningStatistics, Integer> winningStatisticsIntegerEntry : totalStatistics.entrySet()) {
-            winningStatisticsIntegerEntry.getKey().
+            winningStatisticsIntegerEntry.getKey().ㅇㅁㄴㅇ
         }
 
     }
