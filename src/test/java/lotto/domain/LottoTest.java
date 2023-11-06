@@ -24,4 +24,20 @@ class LottoTest {
     @Test
     void purchaseAmountCalculator() {
     }
+
+    @Test
+    void isMatchedBonusNumber() {
+    }
+
+    @Test
+    void countMatchedNumbers() {
+    }
+
+    @Test
+    void getLottoNumbers() {
+    }
+
+    @Test
+    void getLottoNumbersAsString() {
+    }
 }

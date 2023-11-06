@@ -26,4 +26,8 @@ public class LottoGame {
     }
 
 
+    public Lotto getLotto(int index){
+        return this.lottoTickets.get(index);
+    }
+
 }

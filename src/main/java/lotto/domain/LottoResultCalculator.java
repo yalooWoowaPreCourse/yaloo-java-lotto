@@ -18,7 +18,6 @@ public class LottoResultCalculator {
         if (totalStatistics==null){
             this.totalStatistics = new Hashtable<>();
         }
-
         for (WinningStatistics winningStatistics : WinningStatistics.values()) {
             this.totalStatistics.put(winningStatistics, 0);
         }
@@ -28,6 +27,8 @@ public class LottoResultCalculator {
     public LottoResultCalculator() {
         this.totalStatistics = new Hashtable<>();
         this.strategies = new ArrayList<>();
+        this.initializeStrategies();
+        this.initializeTotalStatistics();
     }
 
     private void initializeStrategies() {
@@ -51,6 +52,7 @@ public class LottoResultCalculator {
         if (countMatchedNumbers >=3 && !(countMatchedNumbers==5)){
             strategies.get(index).apply(totalStatistics);
         }
+
         else if (countMatchedNumbers ==5){
             //보너스 맞춘 경우 2등
             if (lotto.isMatchedBonusNumber(winningNumbers, bonusNumber)){

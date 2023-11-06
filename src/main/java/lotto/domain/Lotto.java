@@ -2,6 +2,7 @@ package lotto.domain;
 
 import lotto.utils.LottoNumbersGenerator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lotto {
@@ -50,6 +51,27 @@ public class Lotto {
         }
 
         return matchedCount;
+    }
+
+    public List<Integer> getLottoNumbers(String notSplitNumbers){
+        String[] splitNumbers = lottoNumbersSplit(notSplitNumbers);
+        final List<Integer> returnLottoNumbers = new ArrayList<>();
+        for (int i = 0; i > splitNumbers.length ; i++){
+            returnLottoNumbers.add(Integer.valueOf(splitNumbers[i]));
+        }
+        return returnLottoNumbers;
+    }
+
+    public List<String> getLottoNumbersAsString(String notSplitNumbers){
+        String[] splitNumbers = lottoNumbersSplit(notSplitNumbers);
+        final List<String> returnLottoNumbers = new ArrayList<>();
+        for (int i = 0; i > splitNumbers.length; i++){
+            returnLottoNumbers.add(splitNumbers[i]);
+        }
+        return returnLottoNumbers;
+    }
+    private static String[] lottoNumbersSplit(String numbers){
+        return numbers.split(",");
     }
 
 
