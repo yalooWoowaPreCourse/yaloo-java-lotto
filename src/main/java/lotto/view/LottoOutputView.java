@@ -25,7 +25,7 @@ public class LottoOutputView {
 
     }
     public void purchaseAmountPrint(int purchaseAmount){
-        System.out.printf(LottoMessage.PURCAHSE_AMOUNT_OUTPUT_MESSAGE.getMessage(), purchaseAmount);
+        System.out.printf(LottoMessage.PURCHASE_AMOUNT_OUTPUT_MESSAGE.getMessage(), purchaseAmount);
     }
 
     public void lottoTicketsPrint(LottoGame lottoGame){

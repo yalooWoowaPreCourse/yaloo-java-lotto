@@ -2,9 +2,9 @@ package lotto.view;
 
 public enum LottoMessage {
 
-    //상수("속성값"), 
+    //상수("속성값"),
     PURCHASE_PRICE_INPUT_MESSAGE("구입금액을 입력해 주세요."),
-    PURCAHSE_AMOUNT_OUTPUT_MESSAGE("%d개를 구매했습니다.\n"),
+    PURCHASE_AMOUNT_OUTPUT_MESSAGE("%d개를 구매했습니다.\n"),
     WINNING_NUMBER_INPUT_MESSAGE("당첨 번호를 입력해 주세요."),
     BONUS_NUMBER_INPUT_MESSAGE("보너스 번호를 입력해 주세요."),
     TOTAL_RETURN_RATE_OUTPUT_MESSAGE("총 수익률은 %d%%입니다"),
