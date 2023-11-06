@@ -38,43 +38,16 @@ public class LottoResultCalculator {
         strategies.add(new SixMatchedWinningStrategy());
     }
 
-    /**
-     * 보너스 번호 제외, 몇개가 당첨 번호와 맞는지 확인
-     * */
-    public int countMatchedNumbers(List<Integer> winningNumbers,
-                                   List<Integer> lottoTicket){
-        int matchedCount = 0;
-        for (Integer winningNumber : winningNumbers) {
-            if (lottoTicket.contains(winningNumber)){
-                matchedCount++;
-            }
-        }
 
-        return matchedCount;
-    }
-
-    public boolean isMatchedBonusNumber(List<Integer> winningNumbers,
-                                        int bonus){
-        //보너스 번호가 있으면 true, 없으면 false
-        return winningNumbers.contains(bonus);
-    }
-
-    public long getRateOfReturn(int purchasePrice,
-                                Map<WinningStatistics, Integer> totalStatistics){
-        for (Map.Entry<WinningStatistics, Integer> winningStatisticsIntegerEntry : totalStatistics.entrySet()) {
-            winningStatisticsIntegerEntry.getKey().
-        }
-
-    }
 
     /**
      * 로또 당첨 개수 확인 계산기
      * */
     public Map<WinningStatistics, Integer> lottoWinningCountingCalculate(List<Integer> winningNumbers,
                                               List<Integer> lottoTicket,
-                                              int bonusNumber){
+                                              int bonusNumber, Lotto lotto){
 
-        int countMatchedNumbers = countMatchedNumbers(winningNumbers, lottoTicket);
+        int countMatchedNumbers = lotto.countMatchedNumbers(winningNumbers, lottoTicket);
         int index = countMatchedNumbers - 3;
 
         //index 3 -> 0 부터 -3
@@ -84,7 +57,7 @@ public class LottoResultCalculator {
         }
         else if (countMatchedNumbers ==5){
             //보너스 맞춘 경우 2등
-            if (isMatchedBonusNumber(winningNumbers, bonusNumber)){
+            if (lotto.isMatchedBonusNumber(winningNumbers, bonusNumber)){
                 index += 1;
                 strategies.get(index).apply(totalStatistics);
             }
@@ -93,4 +66,14 @@ public class LottoResultCalculator {
 
         return totalStatistics;
     }
+
+    public long lottoPrizeRateCalculate(int purchasePrice,
+                                        Map<WinningStatistics, Integer> totalStatistics){
+        for (Map.Entry<WinningStatistics, Integer> winningStatisticsIntegerEntry : totalStatistics.entrySet()) {
+            winningStatisticsIntegerEntry.getKey().
+        }
+
+    }
+
+
 }
