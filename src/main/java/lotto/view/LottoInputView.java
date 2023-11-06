@@ -13,20 +13,20 @@ public class LottoInputView {
     }
 
     public String purchasePriceInput(){
-        System.out.println("구입금액을 입력해 주세요.");
+        System.out.println(LottoMessage.PURCHASE_PRICE_INPUT_MESSAGE.getMessage());
         String purchasePrice = Console.readLine();
         return purchasePrice;
     }
 
     public String lottoWinningNumbersInput(){
-        System.out.println("당첨 번호를 입력해 주세요.");
+        System.out.println(LottoMessage.WINNING_NUMBER_INPUT_MESSAGE.getMessage());
         String winningNumbers = Console.readLine();
 
         return winningNumbers;
     }
 
     public String bonusNumberInput(){
-        System.out.println("보너스 번호를 입력해 주세요.");
+        System.out.println(LottoMessage.BONUS_NUMBER_INPUT_MESSAGE.getMessage());
         String bonusNumber = Console.readLine();
         return bonusNumber;
     }
