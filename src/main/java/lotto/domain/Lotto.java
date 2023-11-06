@@ -31,4 +31,6 @@ public class Lotto {
         int result = Integer.parseInt(purchasePrice)/1000;
         return result;
     }
+
+
 }

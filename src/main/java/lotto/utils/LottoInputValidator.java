@@ -37,6 +37,8 @@ public class LottoInputValidator {
         return true;
     }
 
+
+
     private static List<Integer> getWithoutDuplicates(List<Integer> withDuplicates) {
         return withDuplicates.stream().distinct().collect(Collectors.toList());
     }

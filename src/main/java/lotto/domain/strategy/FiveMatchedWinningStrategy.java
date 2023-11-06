@@ -8,7 +8,7 @@ public class FiveMatchedWinningStrategy implements WinningStrategy{
     @Override
     public void apply(Map<WinningStatistics, Integer> totalStatistics) {
         int fiveCount = totalStatistics.get(WinningStatistics.FIVE_MATCH);
-        totalStatistics.put(WinningStatistics.FIVE_MATCH, fiveCount+1);
+        totalStatistics.put(WinningStatistics.FIVE_BONUS_MATCH, fiveCount+1);
     }
 
 }
