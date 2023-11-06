@@ -39,10 +39,6 @@ public class LottoResultCalculator {
     }
 
 
-
-    /**
-     * 로또 당첨 개수 확인 계산기
-     * */
     public Map<WinningStatistics, Integer> lottoWinningCountingCalculate(List<Integer> winningNumbers,
                                               List<Integer> lottoTicket,
                                               int bonusNumber, Lotto lotto){
@@ -69,10 +65,25 @@ public class LottoResultCalculator {
 
     public long lottoPrizeRateCalculate(int purchasePrice,
                                         Map<WinningStatistics, Integer> totalStatistics){
-        for (Map.Entry<WinningStatistics, Integer> winningStatisticsIntegerEntry : totalStatistics.entrySet()) {
-            winningStatisticsIntegerEntry.getKey().
-        }
 
+        long totalPrice = 0;
+        long result = 0;
+
+        totalPrice = getTotalPrice(totalStatistics, totalPrice);
+
+        result = (purchasePrice/totalPrice)*100;
+
+        return result;
+
+    }
+
+    private static long getTotalPrice(Map<WinningStatistics, Integer> totalStatistics, long totalPrice) {
+        for (Map.Entry<WinningStatistics, Integer> winningStatisticsIntegerEntry : totalStatistics.entrySet()) {
+            WinningStatistics key = winningStatisticsIntegerEntry.getKey();
+            int numberOfWins = winningStatisticsIntegerEntry.getValue();
+            totalPrice += key.getWinningPrize()*numberOfWins;
+        }
+        return totalPrice;
     }
 
 
