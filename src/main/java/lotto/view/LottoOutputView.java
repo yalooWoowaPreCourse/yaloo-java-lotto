@@ -2,8 +2,10 @@ package lotto.view;
 
 import lotto.domain.Lotto;
 import lotto.domain.LottoGame;
+import lotto.domain.WinningStatistics;
 
 import java.util.List;
+import java.util.Map;
 
 public class LottoOutputView {
 
@@ -23,7 +25,7 @@ public class LottoOutputView {
 
     }
     public void purchaseAmountPrint(int purchaseAmount){
-        System.out.printf("%d개를 구매했습니다.\n", purchaseAmount);
+        System.out.printf(LottoMessage.PURCAHSE_AMOUNT_OUTPUT_MESSAGE.getMessage(), purchaseAmount);
     }
 
     public void lottoTicketsPrint(LottoGame lottoGame){
@@ -51,6 +53,17 @@ public class LottoOutputView {
         String bonusNumber = lottoInputView.bonusNumberInput();
         System.out.println(bonusNumber);
 
+    }
+
+    public void lottoWinningPrizeResultPrint(Map<WinningStatistics, Integer> totalStatistics){
+
+        System.out.printf(LottoMessage.WINNING_PRIZE_RESULT_OUTPUT_MESSAGE.getMessage(),totalStatistics.get(WinningStatistics.THREE_MATCH),
+                totalStatistics.get(WinningStatistics.FOUR_MATCH),totalStatistics.get(WinningStatistics.FIVE_MATCH)
+                ,totalStatistics.get(WinningStatistics.FIVE_BONUS_MATCH),totalStatistics.get(WinningStatistics.SIX_MATCH));
+    }
+
+    public void lottoWinningPrizeRatePrint(long winningPrizeRate){
+        System.out.printf(LottoMessage.TOTAL_RETURN_RATE_OUTPUT_MESSAGE.getMessage(), winningPrizeRate);
     }
 
 
