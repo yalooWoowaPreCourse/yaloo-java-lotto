@@ -61,18 +61,30 @@ public class Lotto {
         }
         return returnLottoNumbers;
     }
+    public List<Integer> getLottoNumbers(){
+
+        return null;
+    }
 
     public List<String> getLottoNumbersAsString(String notSplitNumbers){
         String[] splitNumbers = lottoNumbersSplit(notSplitNumbers);
-        final List<String> returnLottoNumbers = new ArrayList<>();
-        for (int i = 0; i > splitNumbers.length; i++){
+        List<String> returnLottoNumbers = new ArrayList<>();
+
+
+        for (int i = 0; i < splitNumbers.length; i++){
             returnLottoNumbers.add(splitNumbers[i]);
         }
+
         return returnLottoNumbers;
     }
+
+
     private static String[] lottoNumbersSplit(String numbers){
         return numbers.split(",");
     }
+
+
+
 
 
 }
