@@ -40,40 +40,39 @@ public class LottoResultCalculator {
     }
 
 
-    public Map<WinningStatistics, Integer> lottoWinningCountingCalculate(List<Integer> winningNumbers,
+    public void lottoWinningCountingCalculate(List<Integer> winningNumbers,
                                               List<Integer> lottoTicket,
-                                              int bonusNumber, Lotto lotto){
+                                              int bonusNumber, LottoGameCalculator lottoGameCalculator){
 
-        int countMatchedNumbers = lotto.countMatchedNumbers(winningNumbers, lottoTicket);
+        int countMatchedNumbers = lottoGameCalculator.countMatchedNumbers(winningNumbers, lottoTicket);
         int index = countMatchedNumbers - 3;
-
-        //index 3 -> 0 부터 -3
-        // countMatched >=3
-        if (countMatchedNumbers >=3 && !(countMatchedNumbers==5)){
+        if (countMatchedNumbers == 3) {
+            strategies.get(index).apply(totalStatistics);
+        } else if (countMatchedNumbers == 4){
+            strategies.get(index).apply(totalStatistics);
+        } else if (countMatchedNumbers == 5 && !lottoGameCalculator.isMatchedBonusNumber(winningNumbers, bonusNumber)){
+            strategies.get(index).apply(totalStatistics);
+        } else if (countMatchedNumbers == 5 && lottoGameCalculator.isMatchedBonusNumber(winningNumbers, bonusNumber)){
+            index+=1;
+            strategies.get(index).apply(totalStatistics);
+        } else if (countMatchedNumbers == 6){
             strategies.get(index).apply(totalStatistics);
         }
-
-        else if (countMatchedNumbers ==5){
-            //보너스 맞춘 경우 2등
-            if (lotto.isMatchedBonusNumber(winningNumbers, bonusNumber)){
-                index += 1;
-                strategies.get(index).apply(totalStatistics);
-            }
-            strategies.get(index).apply(totalStatistics);
-        }
-
-        return totalStatistics;
     }
 
-    public long lottoPrizeRateCalculate(int purchasePrice,
+    public Map<WinningStatistics, Integer> getTotalStatistics(){
+        return this.totalStatistics;
+    }
+
+    public double lottoPrizeRateCalculate(int purchasePrice,
                                         Map<WinningStatistics, Integer> totalStatistics){
 
         long totalPrice = 0;
-        long result = 0;
+        double result = 0;
 
         totalPrice = getTotalPrice(totalStatistics, totalPrice);
 
-        result = (purchasePrice/totalPrice)*100;
+        result = (double)((totalPrice * 100) / (double) purchasePrice);
 
         return result;
 

@@ -17,7 +17,7 @@ class LottoGameTest {
     int row;
 
     LottoGame lottoGame;
-    List<List<Integer>> lottoTickets;
+    List<Lotto> lottoTickets;
 
     @BeforeEach
     void setUp() {
@@ -30,7 +30,7 @@ class LottoGameTest {
         column = lottoTickets.size();
 
         //가로
-        row = lottoTickets.get(0).size();
+        row = lottoTickets.get(0).getLottoNumbers().size();
     }
 
 
@@ -50,8 +50,8 @@ class LottoGameTest {
     void getLottoTickets() {
         assertAll(
                 ()-> assertEquals(ArrayList.class, lottoTickets.getClass()),
-                () -> assertEquals(Integer.class, lottoTickets.get(1).get(1).getClass()),
-                () -> assertEquals(lottoTickets.get(0).size(), row),
+                () -> assertEquals(Integer.class, lottoTickets.get(1).getLottoNumbers().get(1).getClass()),
+                () -> assertEquals(lottoTickets.get(0).getLottoNumbers().size(), row),
                 () -> assertEquals(lottoTickets.size(), column)
         );
     }

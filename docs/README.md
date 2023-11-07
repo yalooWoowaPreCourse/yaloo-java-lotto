@@ -44,13 +44,14 @@
   - 계산
     - [x] 당첨 번호 개수 계산 - LottoResultCalculator#countMatchedNumbers()
     - [x] 보너스 번호 여부 확인 - LottoResultCalculator#isMatchedBonusNumber()
-    - [ ] 당첨 번호가 5개일 때 보너스 번호 일치 여부 확인 - LottoController#
-    - [ ] 당첨률 결과 통계를 위한 데이터 정리 작업 - Lotto#
-    - [ ] 총 수익률 계산 - LottoResultCalculator#getRateOfReturn()
-    - [ ] 총 수익률 출력 - LottoOutputView#
+    - [x] 당첨 번호가 5개일 때 보너스 번호 일치 여부 확인 - LottoController#
+    - [x] 당첨률 결과 통계를 위한 데이터 정리 작업 - Lotto#
+    - [x] 총 수익률 계산 - LottoResultCalculator#getRateOfReturn()
+    - [x] 총 수익률 출력 - LottoOutputView#
   - 출력
     - [x] 당첨 결과 출력 - LottoOutputView#lottoWinningPrizeResultPrint()
-    - [ ] 당첨 결과 확률 출력 - LottoOutputView#lottoWinningPrizeRatePrint()
+    - [x] 당첨 결과 확률 출력 - LottoOutputView#lottoWinningPrizeRatePrint()
 
 ## 🔨테스트
 ### [기능별 테스트]
+

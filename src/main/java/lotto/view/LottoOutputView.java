@@ -17,11 +17,13 @@ public class LottoOutputView {
         System.out.printf(LottoMessage.PURCHASE_AMOUNT_OUTPUT_MESSAGE.getMessage(), purchaseAmount);
     }
 
-    public void lottoTicketsPrint(LottoGame lottoGame){
-        List<List<Integer>> lottoTickets = lottoGame.getLottoTickets();
+    public void lottoTicketsPrint(LottoGame lottoGame, int purchaseAmount){
 
-        for (List<Integer> lottoTicket : lottoTickets) {
-            System.out.println(lottoTicket.toString());
+        List<Lotto> lottoTickets = lottoGame.getLottoTickets();
+
+        for (Lotto lotto : lottoTickets) {
+
+            System.out.println(lotto.getLottoNumbers().toString());
         }
     }
 
@@ -42,7 +44,7 @@ public class LottoOutputView {
                 ,totalStatistics.get(WinningStatistics.FIVE_BONUS_MATCH).intValue(),totalStatistics.get(WinningStatistics.SIX_MATCH).intValue());
     }
 
-    public void lottoWinningPrizeRatePrint(long winningPrizeRate){
+    public void lottoWinningPrizeRatePrint(double winningPrizeRate){
         System.out.printf(LottoMessage.TOTAL_RETURN_RATE_OUTPUT_MESSAGE.getMessage(), winningPrizeRate);
     }
 
