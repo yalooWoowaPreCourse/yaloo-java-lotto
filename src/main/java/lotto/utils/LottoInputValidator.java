@@ -39,8 +39,9 @@ public class LottoInputValidator {
         return true;
     }
 
+
     public List<Integer> checkWinningNumbersValidate(List<String> withSplitLottoNumbers) {
-        final List<Integer> winningNumbers = new ArrayList<>();
+        List<Integer> winningNumbers = new ArrayList<>();
         for (String number : withSplitLottoNumbers) {
             if(!isNumericValidation(number)){
                 throw new InvalidInputException("[Error] 숫자만 입력해주세요.");
@@ -59,7 +60,7 @@ public class LottoInputValidator {
             throw new InvalidInputException("[Error] 보너스 번호는 숫자만 입력해주세요.");
         } else if (!isNumberRangeValidation(bonusNumber)){
             throw new InvalidRangeNumberException();
-        } else if (isDuplicationNumber(winningNumbers, Integer.parseInt(bonusNumber))){
+        } else if (!isDuplicationNumber(winningNumbers, Integer.parseInt(bonusNumber))){
             throw new AlreadyExistNumberException();
         }
 
