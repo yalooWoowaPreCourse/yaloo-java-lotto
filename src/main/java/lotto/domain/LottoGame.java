@@ -6,28 +6,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LottoGame {
-    private final List<Lotto> lottoTickets;
+    private final List<List<Integer>> lottoTickets;
 
     public LottoGame(int purchaseAmount){
         this.lottoTickets = generateLottoTickets(purchaseAmount);
     }
 
-    public List<Lotto> generateLottoTickets(int purchaseAmount){
-        List<Lotto> lottos = new ArrayList<>();
+    public List<List<Integer>> generateLottoTickets(int purchaseAmount){
+        List<List<Integer>> lottoTickets = new ArrayList<>();
 
         for (int i = 0; i < purchaseAmount; i++){
-            lottos.add(new Lotto());
+            lottoTickets.add(new Lotto().lottoNumbersGenerator());
         }
-        return lottos;
+        return lottoTickets;
     }
 
-    public List<Lotto> getLottoTickets(){
+    public List<Integer> getLottoTicket(int index){
+        return this.lottoTickets.get(index);
+    }
+
+    public List<List<Integer>> getLottoTickets(){
         return this.lottoTickets;
     }
 
-
-    public Lotto getLotto(int index){
-        return this.lottoTickets.get(index);
-    }
 
 }
