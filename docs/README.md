@@ -22,6 +22,7 @@
 ### [기능 목록]
 - 구매 금액 입력 받기
   - [x] 구매 금액 입력 - LottoInputView#purchasePriceInput()
+    - [x] 구매 금액 유효성 검사 - LottoInputInvalidator#
   - [x] 입력 받은 구매 금액 출력 - LottoOutputView#purchasePricePrint()
   - [x] (입력 받은 구매 금액 % 1000)을 1개로 구매 개수 구하기 - Lotto#purchaseAmountCalculator()
   - [x] 구매 개수 출력 - LottoOutputView#purchaseAmountPrint()
